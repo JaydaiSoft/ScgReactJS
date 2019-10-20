@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import Nav from './components/Nav'
+import NumberSeries from './components/NumberSeries'
+import GoogleSearch from './components/GoogleSearch'
+import LineNotify from './components/LineNotify'
+import NotFound from './components/NotFound';
+import Home from './components/Home';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		return (
+			<div className="App">
+				<Router basename="/SCG">
+					<div>
+						<Nav />
+						<Switch>
+							<Route path="/home" component={Home} />
+							<Route path="/numberseries" component={NumberSeries} />
+							<Route path="/googlesearch" component={GoogleSearch} />
+							<Route path="/linenotify" component={LineNotify} />
+							<Route component={Home} />
+						</Switch>
+					</div>
+				</Router>
+			</div>
+		);
+	}
 }
 
 export default App;
