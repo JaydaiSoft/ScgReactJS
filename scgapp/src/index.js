@@ -7,7 +7,8 @@ import App from './App';
 
 const theme = createMuiTheme({
     palette: {
-      primary: {main:'#ee2524'}//SCG color,
+      // primary: {main:'#ee2524'}//SCG color,
+      primary: {main:'#337ab7'}
     },
   });
 

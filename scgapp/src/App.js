@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Nav from './components/Nav'
+import Transaction from './components/TransactionImport'
 import NumberSeries from './components/NumberSeries'
 import GoogleSearch from './components/GoogleSearch'
 import LineNotify from './components/LineNotify'
@@ -26,6 +27,7 @@ class App extends Component {
 							<Route path="/numberseries" component={NumberSeries} />
 							<Route path="/googlesearch" component={GoogleSearch} />
 							<Route path="/linenotify" component={LineNotify} />
+							<Route path="/Transaction" component={Transaction} />
 							<Route component={Home} />
 						</Switch>
 					</div>
